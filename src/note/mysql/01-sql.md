@@ -4,7 +4,7 @@
 
 ## DDL(Data Definition Language)
 
-```mysql
+```sql
 show schemas; -- schemas 同 database
 show databases;
 select database();
@@ -16,7 +16,7 @@ show create database `java_basic`;
 drop database if exists `java_basic`;
 ```
 
-```mysql
+```sql
 use `java_basic`;
 show tables;
 
@@ -60,7 +60,7 @@ drop table if exists `student`;
 |   datetime    |       8        | YYYY-MM-DD HH:MM:SS |
 |   timestamp   |       4        | YYYY-MM-DD HH:MM:SS |
 
-```mysql
+```sql
 use `java_basic`;
 
 alter table `student`
@@ -91,7 +91,7 @@ show tables;
 
 ## DML(Date Manipulation Language)
 
-```mysql
+```sql
 use `java_basic`;
 insert into `student` (`name`, `gender`)
 values ('zhang3', 1),
@@ -117,7 +117,7 @@ from `student`;
 
 ## DQL(Data Query Language)
 
-```mysql
+```sql
 -- 准备测试数据
 drop database if exists `java_basic`;
 create database if not exists `java_basic` charset utf8mb4;
@@ -156,7 +156,7 @@ select *
 from `student`;
 ```
 
-```mysql
+```sql
 select *
 from `student`;
 
@@ -185,7 +185,7 @@ where `gender` = 1;
 |  or / &#124;&#124;  |             或者             |
 |       not / !       |             取反             |
 
-```mysql
+```sql
 -- 去重
 select distinct case `gender`
                     when 1 then '男'
@@ -206,7 +206,7 @@ from `student`;
 |  sum  | 求和  |
 |  avg  | 平均值 |
 
-```mysql
+```sql
 -- 分组查询
 select `gender` as `性别`,
        count(`id`) `人数`
@@ -219,7 +219,7 @@ having `人数` > 2;
 -- where不能对聚合函数进行判断, having可以
 ```
 
-```mysql
+```sql
 -- 排序
 select *
 from `student`
@@ -227,7 +227,7 @@ order by gender asc,
          age desc;
 ```
 
-```mysql
+```sql
 -- 分页
 select *
 from `student`
@@ -239,7 +239,7 @@ limit 4, 4;
 
 ## DCL(Data Control Language)
 
-```mysql
+```sql
 use `mysql`;
 select *
 from `user`;
@@ -260,7 +260,7 @@ select *
 from user;
 ```
 
-```mysql
+```sql
 create user `any`@`%` identified by '123456';
 show grants for 'any'@'%';
 grant all on *.* to `any`@`%`;
