@@ -62,6 +62,10 @@ export default defineConfig({
 
     sidebar: {
       '/note/default': generateSidebarItem('note/default'),
+      '/note/big-data': generateSidebarItem('note/big-data'),
+      '/note/java': generateSidebarItem('note/java'),
+      '/note/mysql': generateSidebarItem('note/mysql'),
+      '/note/seeyon': generateSidebarItem('note/seeyon'),
     },
 
     socialLinks: [
